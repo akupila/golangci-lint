@@ -7,6 +7,7 @@ import (
 
 	"github.com/golangci/golangci-lint/pkg/commands"
 	"github.com/golangci/golangci-lint/pkg/exitcodes"
+	"go.uber.org/automaxprocs/maxprocs"
 )
 
 var (
@@ -19,6 +20,9 @@ var (
 )
 
 func main() {
+	// Set GOMAXPROCS to the number of CPUs available.
+	maxprocs.Set()
+
 	if buildInfo, available := debug.ReadBuildInfo(); available {
 		goVersion = buildInfo.GoVersion
 
