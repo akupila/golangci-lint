@@ -1,4 +1,4 @@
-module github.com/golangci/golangci-lint
+module github.com/akupila/golangci-lint
 
 go 1.20
 
